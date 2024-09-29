@@ -77,43 +77,59 @@ const TaskList = () => {
 
   return (
     <>
-      <div className="flex md:flex-row flex-col items-center  gap-2 space-y-2 md:space-y-0 ">
-        <input
-          type="text"
-          placeholder="Add a new task here..."
-          className="bg-transparent  border text-xs md:text-base border-cyan-900 p-2 rounded-lg w-full "
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
+      <div className="flex md:flex-row flex-col items-end  gap-2 space-y-2 md:space-y-0 ">
+        <div className="w-full space-y-3">
+          <label htmlFor="addTask" className="text-cyan-700">
+            Add a task
+          </label>
+          <input
+            type="text"
+            id="addTask"
+            placeholder="Add a new task here..."
+            className="bg-transparent  border text-xs md:text-base border-cyan-900 p-2 rounded-lg w-full "
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
+        </div>
 
-        <input
-          type="date"
-          value={dueDate}
-          onChange={(e) => setDueDate(e.target.value)}
-          className="bg-transparent  text-white border text-xs md:text-base p-2 rounded-lg border-cyan-900 w-full md:w-1/4 "
-        />
-        {/* <CiCalendarDate className="text-white absolute right-[29rem] text-lg" /> */}
+        <div className="space-y-3 w-full md:w-1/4">
+          <label htmlFor="dueDate" className="text-cyan-700">
+            Due Date
+          </label>
+          <input
+            type="date"
+            id="dueDate"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+            className="bg-transparent  text-white border text-xs md:text-base p-2 rounded-lg border-cyan-900 w-full md:w-full "
+          />
+        </div>
 
-        <select
-          name="priority"
-          id=""
-          value={priority}
-          onChange={(e) => setPriority(e.target.value)}
-          className="bg-transparent border text-xs md:text-base border-cyan-900 p-2 rounded-lg text-white w-full md:w-1/4"
-        >
-          <option value="" disabled className="bg-black">
+        <div className="space-y-3 w-full md:w-1/4">
+          <label htmlFor="priority" className="text-cyan-700">
             Priority
-          </option>
-          <option value="Low" className="bg-black">
-            Low
-          </option>
-          <option value="Medium" className="bg-black">
-            Medium
-          </option>
-          <option value="High" className="bg-black ">
-            High
-          </option>
-        </select>
+          </label>
+          <select
+            name="priority"
+            id="priority"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+            className="bg-transparent border text-xs md:text-base border-cyan-900 p-2 rounded-lg text-white w-full md:w-full"
+          >
+            <option value="" disabled className="bg-black">
+              Priority
+            </option>
+            <option value="Low" className="bg-black">
+              Low
+            </option>
+            <option value="Medium" className="bg-black">
+              Medium
+            </option>
+            <option value="High" className="bg-black ">
+              High
+            </option>
+          </select>
+        </div>
         <button
           className="bg-cyan-900 p-2 rounded-lg font-semibold w-full md:w-1/5"
           onClick={addTask}
