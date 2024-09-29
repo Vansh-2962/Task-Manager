@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useRef, useState } from "react";
 import { reducer } from "../utils/TaskReducer";
-
+import "../App.css";
 const TaskList = () => {
   const [content, setContent] = useState("");
   const [dueDate, setDueDate] = useState("");
@@ -90,8 +90,10 @@ const TaskList = () => {
           type="date"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}
-          className="text-white bg-transparent border text-xs md:text-base p-2 rounded-lg border-cyan-900 w-full md:w-1/4 "
+          className="bg-transparent  text-white border text-xs md:text-base p-2 rounded-lg border-cyan-900 w-full md:w-1/4 "
         />
+        {/* <CiCalendarDate className="text-white absolute right-[29rem] text-lg" /> */}
+
         <select
           name="priority"
           id=""
