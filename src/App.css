@@ -1,6 +1,6 @@
 input[type="date"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
   appearance: none;
   background-color: transparent; /*Keep your transparent background */
   /* border: 1px solid #00bcd4; Example border, adjust to your preference */
